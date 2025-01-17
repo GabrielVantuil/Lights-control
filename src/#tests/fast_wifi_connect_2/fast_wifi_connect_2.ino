@@ -2,8 +2,8 @@
 #include <ESPAsyncWebServer.h>
 #include <ESP8266HTTPClient.h>
 
-const char* ssid = "HAIDEE123";
-const char* pwd = "harmony2021";
+const char* ssid = "";
+const char* pwd = "";
 byte ip[] = {192, 168, 15, 5};
 byte gw[] = {192, 168, 15, 1};
 byte mask[] = {255, 255, 255, 0};

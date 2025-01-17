@@ -17,8 +17,8 @@ typedef struct struct_message {
 // Create a struct_message called myData
 struct_message myData;
 
-#define STASSID "HAIDEE123"
-#define STAPSK  "harmony2021"
+#define STASSID ""
+#define STAPSK  ""
 const char* ssid = STASSID;
 const char* password = STAPSK;
 

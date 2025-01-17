@@ -5,8 +5,8 @@
 #include <ESP8266HTTPUpdateServer.h>
 
 #ifndef STASSID
-#define STASSID "HAIDEE123"
-#define STAPSK  "harmony2021"
+#define STASSID ""
+#define STAPSK  ""
 #endif
 
 const char* host = "lights";

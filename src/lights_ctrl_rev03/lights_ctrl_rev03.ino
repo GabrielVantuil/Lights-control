@@ -12,8 +12,8 @@
 #include <AsyncElegantOTA.h>
 */
 #ifndef STASSID
-#define STASSID "2G_GVANTUIL"
-#define STAPSK  "gabriel123487659"
+#define STASSID ""
+#define STAPSK  ""
 #endif
 
 const char* host = "lights";
