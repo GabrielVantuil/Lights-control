@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<link id='favicon' rel='shortcut icon' href='./favicon.png'>
+<body style='margin: 0;'>
+<p id='demo'>Failed to reach page</p>
+<script>
+let url = 'https://gabrielvantuil.github.io/projects/lightsControl/';
+// let url = 'http://127.0.0.1:5500';
+const scriptPromise = new Promise((resolve, reject) => {
+  const script = document.createElement('script');
+  document.body.appendChild(script);
+  script.onload = resolve;
+  script.onerror = reject;
+  script.async = true;
+  script.src = url+'/script.js';
+});
+var link = document.getElementById('favicon');
+link.href = url+'/favicon.png';
+fetch (url)
+.then(x => x.text())
+.then(y => document.body.innerHTML = y);
+</script>
+</body>
+</html>
