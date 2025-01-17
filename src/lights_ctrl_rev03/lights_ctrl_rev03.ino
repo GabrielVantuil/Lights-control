@@ -5,16 +5,13 @@
 #include "headersAndGlobals.h"
 #include <espnow.h>
 #include "board_config.h"
+#include "wifi-credentials.h"
 //#include <ESP8266HTTPUpdateServer.h>
 /*
 #include <ESPAsyncTCP.h>
 #include <ESPAsyncWebServer.h>
 #include <AsyncElegantOTA.h>
 */
-#ifndef STASSID
-#define STASSID ""
-#define STAPSK  ""
-#endif
 
 const char* host = "lights";
 const char* ssid = STASSID;
