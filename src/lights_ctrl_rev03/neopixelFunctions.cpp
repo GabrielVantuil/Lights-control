@@ -1,3 +1,5 @@
+#include "neopixelFunctions.h"
+
 void toggleNpWhite(uint8_t value){
   digitalWrite(OUT3, out_d[3]);
   if(out_d[3]){

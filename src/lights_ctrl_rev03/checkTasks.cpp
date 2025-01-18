@@ -1,3 +1,5 @@
+#include "checkTasks.h"
+
 void checkNpQueue(){
   static uint8_t R_val, G_val, B_val, W_val;
   static int startLed, endLed, nextLed;

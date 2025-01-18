@@ -1,3 +1,5 @@
+#include "buttonFunctions.h"
+
 void bt_functions(){
   for(uint8_t bt = 0; bt<4; bt++){
     if(bt_start_edge[bt]){

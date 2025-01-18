@@ -2,10 +2,25 @@
 #include <WiFiClient.h>
 #include <ESP8266WebServer.h>
 #include <ESP8266mDNS.h>
-#include "headersAndGlobals.h"
 #include <espnow.h>
-#include "board_config.h"
+#include <Espalexa.h>
+//------------------ neopixel--------------------
+#include <Adafruit_NeoPixel.h>
+#ifdef __AVR__
+#include <avr/power.h> // Required for 16 MHz Adafruit Trinket
+#endif
+
+
+#include "buttonFunctions.h"
+#include "checkTasks.h"
+#include "headersAndGlobals.h"
+#include "neopixelFunctions.h"
+#include "alexaConfig.h"
+#include "handlers.h"
+
 #include "wifi-credentials.h"
+#include "board_config.h"
+
 //#include <ESP8266HTTPUpdateServer.h>
 /*
 #include <ESPAsyncTCP.h>
@@ -17,27 +32,16 @@ const char* host = "lights";
 const char* ssid = STASSID;
 const char* password = STAPSK;
 #define HOST_NAME "lights ctrl"
-String MAC_ADDR;
 
 //#define ENABLE_LOG
 
-//------------------ neopixel--------------------
-#include <Adafruit_NeoPixel.h>
-#ifdef __AVR__
-#include <avr/power.h> // Required for 16 MHz Adafruit Trinket
-#endif
 
-Adafruit_NeoPixel *pixels;
 
 //------------------ HTTP--------------------
 
 //AsyncWebServer server(80);
-ESP8266WebServer server(80);
 //ESP8266HTTPUpdateServer httpUpdater;
 
-String ledQueue;// = "10.0,250,0,0,0,119;10.0,0,250,0,119,0,10.250,0,0,0,0,119,10.0,0,0,250,119,0,10.1,0,0,0,0,119,END";
-String loopQueue;
-String shiftQueue;
 void setup(void) {
   pinMode(OUT0, OUTPUT);
   pinMode(OUT1, OUTPUT);
@@ -76,6 +80,7 @@ void setup(void) {
   setHandlers();  
   server.begin();
 
+  // addDevices();
   analogWrite(2, 254);  
 }
 
@@ -86,4 +91,5 @@ void loop(void) {
   checkNpQueue();
   checkLeds();
   check_buttons();
+  // espalexa.loop();
 }

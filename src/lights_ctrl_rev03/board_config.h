@@ -1,3 +1,6 @@
+#ifndef BOARD_CONFIG_H__
+#define BOARD_CONFIG_H__
+
 #define OUT0 12
 #define OUT1 14
 #define OUT2 16
@@ -15,3 +18,5 @@ const uint8_t OUT[] = {OUT0,OUT1,OUT2,OUT3};
 #define NEOPIXEL_PIN 0
 
 #define NUMPIXELS 91
+
+#endif

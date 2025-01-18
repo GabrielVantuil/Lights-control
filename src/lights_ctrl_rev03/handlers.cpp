@@ -1,3 +1,5 @@
+#include "handlers.h"
+
 void digitalOut() {
   String arguments = "Comando(s) aceito(s): \n";
   for (uint8_t i = 0; i < server.args(); i++) {
